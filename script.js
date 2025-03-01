@@ -160,24 +160,24 @@
 // })
 
 
-const promise1 = new Promise((resolve, reject) => {
-        console.log("Promise 1 gata");
-        resolve("Promise 1")
-})
+// const promise1 = new Promise((resolve, reject) => {
+//         console.log("Promise 1 gata");
+//         resolve("Promise 1")
+// })
 
-const promise2 = new Promise((resolve, reject) => {
-        console.log("Promise 2 gata");
-        resolve("Promise 2")
-})
+// const promise2 = new Promise((resolve, reject) => {
+//         console.log("Promise 2 gata");
+//         resolve("Promise 2")
+// })
 
-const promise3 = new Promise((resolve, reject) => {
-        console.log("Promise 3 gata");
-        resolve("Promise 3")
-})
+// const promise3 = new Promise((resolve, reject) => {
+//         console.log("Promise 3 gata");
+//         resolve("Promise 3")
+// })
 
-Promise.all([promise1, promise2, promise3]).then(result => {
-    console.log(result)
-})
+// Promise.all([promise1, promise2, promise3]).then(result => {
+//     console.log(result)
+// })
 
 
 
@@ -199,17 +199,56 @@ const getMessage = async () => {
 
 
 // 2.	Basic Await: Write an async function that calls another async function, waits for it to finish, and then returns the result.
-
+const getSomething = async () => {
+        const message = await getMessage();
+        return message;
+           
+}
 
 
 // 3.	Return a Value: Create an async function that fetches data from an API (use a mock API like jsonplaceholder) and returns the fetched data.
+const fetchdata = async () => {
+        const response = await fetch('https://jsonplaceholder.typicode.com/todos/1');
+        const data = await responsse.json();
+        return data;
+}
 
 
 
 // 4.	Handle Promise Rejection: Write an async function that handles a rejected promise using try/catch.
+const getSsomething = async () => {
+        try {
+                const message = await getMessage();
+                return message;
+        } catch (err) {
+                console.log(err);
+        }
+}
+
+
+
+
 // 5.	Await Multiple Promises: Use await to resolve two promises simultaneously and log the results.
+const promise1 = new Promise((resolve, reject) => {
+        setTimeout(() => {
+                resolve("Promise 1");
+        }, 1000);
+        
+});
+
+
+
+
 // 6.	Sequential Execution: Write an async function that calls two promises in sequence, ensuring that the second promise doesn't execute until the first one resolves.
+
+
+
+
 // 7.	Return a Delayed Value: Create an async function that resolves a value after a delay (using setTimeout inside a Promise), and await it.
+
+
+
+
 // 8.	Handle Multiple Async Calls: Create a function that fetches user data and posts data from a mock API using await for each request, and return the combined data.
 
 
