@@ -240,11 +240,24 @@ const promise1 = new Promise((resolve, reject) => {
 
 
 // 6.	Sequential Execution: Write an async function that calls two promises in sequence, ensuring that the second promise doesn't execute until the first one resolves.
+const promise2 = new Promise((resolve, reject) => {
+        setTimeout(() => {
+                resolve("Promise 1");
+        }, 1000);
+        
+});
 
 
 
 
 // 7.	Return a Delayed Value: Create an async function that resolves a value after a delay (using setTimeout inside a Promise), and await it.
+const getDelayedValue = async () => {
+        return new Promise((resolve, reject) => {
+                setTimeout(() => {
+                        resolve("Delayed Value");
+                }, 1000);
+        });
+}
 
 
 
